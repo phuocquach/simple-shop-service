@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mine.Commerce.Api", "Mine.Commerce.Api\Mine.Commerce.Api.csproj", "{BA2026B8-2FEB-441B-ACBE-7BCA596E0A32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mine.Commerce.Domain", "Mine.Commerce.Domain\Mine.Commerce.Domain.csproj", "{35EB5C1D-7D01-43A8-A1CF-A996B24CE3D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mine.Commerce.Infrashstructure", "Mine.Commerce.Infrastructure\Mine.Commerce.Infrastructure.csproj", "{83884032-9F80-46F1-BF2D-826CFE7F1052}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mine.Commerce.Application", "Mine.Commerce.Application\Mine.Commerce.Application.csproj", "{65FF2460-87FD-4373-82CB-89C13A3DA560}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9CD90915-3613-440B-B538-22EDE5633D72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MineCommerceApplication.Tests", "Tests\MineCommerceApplication.Tests\MineCommerceApplication.Tests.csproj", "{058D982B-F37F-4786-9D3D-5413D3B866A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA2026B8-2FEB-441B-ACBE-7BCA596E0A32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA2026B8-2FEB-441B-ACBE-7BCA596E0A32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA2026B8-2FEB-441B-ACBE-7BCA596E0A32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA2026B8-2FEB-441B-ACBE-7BCA596E0A32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35EB5C1D-7D01-43A8-A1CF-A996B24CE3D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35EB5C1D-7D01-43A8-A1CF-A996B24CE3D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35EB5C1D-7D01-43A8-A1CF-A996B24CE3D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35EB5C1D-7D01-43A8-A1CF-A996B24CE3D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83884032-9F80-46F1-BF2D-826CFE7F1052}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83884032-9F80-46F1-BF2D-826CFE7F1052}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83884032-9F80-46F1-BF2D-826CFE7F1052}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83884032-9F80-46F1-BF2D-826CFE7F1052}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65FF2460-87FD-4373-82CB-89C13A3DA560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65FF2460-87FD-4373-82CB-89C13A3DA560}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65FF2460-87FD-4373-82CB-89C13A3DA560}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65FF2460-87FD-4373-82CB-89C13A3DA560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{058D982B-F37F-4786-9D3D-5413D3B866A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{058D982B-F37F-4786-9D3D-5413D3B866A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{058D982B-F37F-4786-9D3D-5413D3B866A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{058D982B-F37F-4786-9D3D-5413D3B866A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C25A9B97-BEA1-49CE-94BB-72231D6404D1}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{058D982B-F37F-4786-9D3D-5413D3B866A2} = {9CD90915-3613-440B-B538-22EDE5633D72}
+	EndGlobalSection
+EndGlobal
