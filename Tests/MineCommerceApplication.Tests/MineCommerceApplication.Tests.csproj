@@ -29,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Mine.Commerce.Api\Mine.Commerce.Api.csproj" />
+    <ProjectReference Include="..\..\src\Mine.Commerce.Api\Mine.Commerce.Api.csproj" />
   </ItemGroup>
 
 </Project>
