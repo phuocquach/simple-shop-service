@@ -8,10 +8,10 @@ RUN dotnet restore "./Mine.Commere.Service.sln"
 
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "Mine.Commerce.Api/Mine.Commerce.Api.csproj" -c Release -o /app/build
+RUN dotnet build "src/Mine.Commerce.Api/Mine.Commerce.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Mine.Commerce.Api/Mine.Commerce.Api.csproj" -c Release -o /app/publish
+RUN dotnet publish "src/Mine.Commerce.Api/Mine.Commerce.Api.csproj" -c Release -o /app/publish
 
 FROM base AS final
 
