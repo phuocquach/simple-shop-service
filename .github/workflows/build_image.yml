@@ -1,0 +1,18 @@
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    
+    - uses: azure/docker-login@v1
+      with:
+        login-server: mmondocker.azurecr.io
+        username: ${{ secrets.acr_mmondocker_username }}
+        password: ${{ secrets.acr_mmondocker_password }}
+    
+    - name: Build and push image to ACR
+      id: build-image
+      run: |
+        docker build "$GITHUB_WORKSPACE/" -f  "Dockerfile" -t mmondocker.azurecr.io/dev:${{ github.sha }}
+        docker push mmondocker.azurecr.io/dev:${{ github.sha }}
