@@ -3,7 +3,6 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <IsPackable>false</IsPackable>
-    <RestoreSources>$(RestoreSources);https://api.nuget.org/v3/index.json;../../gRpc/package</RestoreSources>
   </PropertyGroup>
 
   <ItemGroup>
