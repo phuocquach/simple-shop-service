@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Mine.Commerce.Api.Migrations
 {
-    public partial class initialforsqlserver : Migration
+    public partial class InitilaPgDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -103,7 +103,8 @@ namespace Mine.Commerce.Api.Migrations
                     Price = table.Column<double>(nullable: false),
                     InStock = table.Column<bool>(nullable: false),
                     ProductCode = table.Column<string>(nullable: true),
-                    BrandId = table.Column<Guid>(nullable: false)
+                    BrandId = table.Column<Guid>(nullable: false),
+                    Description = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
