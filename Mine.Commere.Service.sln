@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mine.Commerce.Application",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9CD90915-3613-440B-B538-22EDE5633D72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MineCommerceApplication.Tests", "Tests\MineCommerceApplication.Tests\MineCommerceApplication.Tests.csproj", "{058D982B-F37F-4786-9D3D-5413D3B866A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MineCommerceApplication.Tests", "test\MineCommerceApplication.Tests\MineCommerceApplication.Tests.csproj", "{058D982B-F37F-4786-9D3D-5413D3B866A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
