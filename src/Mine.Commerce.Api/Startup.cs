@@ -14,6 +14,7 @@ using IdentityServer4.AccessTokenValidation;
 using Mine.Commerce.Domain.Core.Services.StorageService;
 using Mine.Commerce.Infrastructure.Services.Storage;
 using Mine.Commerce.Infrastructure.Services.gRpc.ProductsService;
+using Npgsql;
 
 namespace Mine.Commerce.Api
 {
@@ -35,8 +36,11 @@ namespace Mine.Commerce.Api
             {
                 // options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"),
                 //     builder => { builder.MigrationsAssembly("Mine.Commerce.Api"); });
-               options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
-                    builder => { builder.MigrationsAssembly("Mine.Commerce.Api"); });
+               //options.UseNpgSql(Configuration.GetConnectionString("DefaultConnection"),
+               //     builder => { builder.MigrationsAssembly("Mine.Commerce.Api"); });
+               options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"),
+                    builder => { builder.MigrationsAssembly("Mine.Commerce.Api"); }
+               );
             });
             services.AddSwaggerService(Configuration);
 

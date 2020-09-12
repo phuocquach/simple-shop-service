@@ -3,17 +3,17 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Mine.Commerce.Domain\Mine.Commerce.Domain.csproj" />
+    <ProjectReference Include="..\Mine.Commerce.Domain\Mine.Commerce.Domain.csproj"/>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.4">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Azure.Storage.Files.Shares" Version="12.2.3" />
-    <PackageReference Include="Azure.Storage.Blobs" Version="12.4.4" />
-    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="3.1.5" />
-    <PackageReference Include="Cronos" Version="0.7.0" />
+    <PackageReference Include="Azure.Storage.Files.Shares" Version="12.2.3"/>
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.4.4"/>
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="3.1.5"/>
+    <PackageReference Include="Cronos" Version="0.7.0"/>
   </ItemGroup>
   <ItemGroup>
     <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
@@ -21,7 +21,7 @@
     </AssemblyAttribute>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\BackgroundJob\" />
-    <Folder Include="Services\Scheduler\" />
+    <Folder Include="Services\BackgroundJob\"/>
+    <Folder Include="Services\Scheduler\"/>
   </ItemGroup>
 </Project>

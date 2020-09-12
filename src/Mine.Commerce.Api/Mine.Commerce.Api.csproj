@@ -33,6 +33,7 @@
     <PackageReference Include="IdentityModel" Version="4.3.0"/>
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1"/>
     <PackageReference Include="System.Linq.Async" Version="4.1.1"/>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.4"/>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Mine.Commerce.Application\Mine.Commerce.Application.csproj"/>
