@@ -7,8 +7,8 @@ namespace Mine.Commerce.Application.Products
     {
         public ProductProfile()
         {
-            CreateMap<CreateRequest, Product>();
-            CreateMap<UpdateRequest, Product>();
+            CreateMap<Command.CreateRequest, Product>();
+            CreateMap<Command.UpdateRequest, Product>();
             CreateMap<Product, ProductDto>().ReverseMap();
             CreateMap<ProductCategory, ProductCategoryDto>().ReverseMap();
             CreateMap<ProductImage, ProductImageDto>().ReverseMap();

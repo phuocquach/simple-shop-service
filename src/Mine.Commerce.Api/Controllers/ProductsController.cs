@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Mine.Commerce.Application.Products;
+using Mine.Commerce.Application.Products.Command;
 using System;
 using System.Collections.Generic;
 using System.Threading;

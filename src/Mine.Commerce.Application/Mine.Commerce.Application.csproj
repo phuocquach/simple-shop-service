@@ -7,15 +7,16 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="MediatR" Version="8.1.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
-    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="MediatR" Version="8.1.0"/>
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2"/>
+    <PackageReference Include="AutoMapper" Version="9.0.0"/>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="9.2.0"/>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Mine.Commerce.Domain\Mine.Commerce.Domain.csproj" />
-    <ProjectReference Include="..\Mine.Commerce.Infrastructure\Mine.Commerce.Infrastructure.csproj" />
+    <ProjectReference Include="..\Mine.Commerce.Domain\Mine.Commerce.Domain.csproj"/>
+    <ProjectReference Include="..\Mine.Commerce.Infrastructure\Mine.Commerce.Infrastructure.csproj"/>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Features\Orders\Queries\" />
+    <Folder Include="Features\Orders\Queries\"/>
   </ItemGroup>
 </Project>

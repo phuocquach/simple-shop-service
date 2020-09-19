@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 
-namespace Mine.Commerce.Application.Products
+namespace Mine.Commerce.Application.Products.Command
 {
     public class UpdateRequest : IRequest<ProductDto>
     {

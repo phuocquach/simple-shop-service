@@ -63,16 +63,13 @@ namespace MineCommerceApplication.Tests
                     options.DefaultChallengeScheme = "Test";
                 });
                 
-                var mockContext = new Mock<DbContext>();
-                mockContext.Setup(x => x.SaveChanges())
-                .Returns (0);
-                services.AddScoped<DbContext>(x => mockContext.Object);
+                services.AddScoped<DbContext, MineCommerceContext>();
                 services.AddScoped<IUnitOfWork, UnitOfWork>();
                 services.AddAutoMapper(typeof(Startup).Assembly, typeof(ProductProfile).Assembly);
                 services.AddMediatR(typeof(Startup));
                 services.RegisterHanlder();
-                //services.RegisterRepository();
-                services.AddScoped<IStorageService, LocalStorage>();
+                services.RegisterRepository();
+                services.AddScoped<IStorageService, AzureblobStorage>();
                 services.AddGrpc();
 
             });
