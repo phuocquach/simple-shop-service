@@ -4,6 +4,7 @@ using Mine.Commerce.Domain;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Threading;
+using Mine.Commerce.Infrastructure.DBContext;
 using System.Linq;
 
 namespace Mine.Commerce.Infrastructure.ImplementationRepository
@@ -19,7 +20,7 @@ namespace Mine.Commerce.Infrastructure.ImplementationRepository
 
         public override async Task<IEnumerable<Brand>> GetListAsync(int index, int offset, CancellationToken cancellationToken = default)
         {
-            return await _dbSet.Where(x=>!x.IsDeleted).ToListAsync();
+            return await _dbSet.AsQueryable().Where(x=>!x.IsDeleted).ToListAsync();
         }
     }
 }

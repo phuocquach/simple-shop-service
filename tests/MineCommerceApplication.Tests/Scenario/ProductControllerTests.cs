@@ -1,6 +1,7 @@
 ﻿using MineCommerceApplication.Tests.Helper;
 using System;
 using System.Net.Http;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace MineCommerceApplication.Tests.Scenario
@@ -18,7 +19,7 @@ namespace MineCommerceApplication.Tests.Scenario
         }
 
         [Fact]
-        public async System.Threading.Tasks.Task GetListProductTestAsync()
+        public async Task GetListProductTestAsync()
         {
             var response = await _httpClient.GetAsync("/api/products");
             response.EnsureSuccessStatusCode();

@@ -26,10 +26,4 @@ namespace Mine.Commerce.Application.Brands
             return brand.Id;
         }
     }
-
-    public class CreateRequest : IRequest<Guid>
-    {
-        public string Name { get; set; }
-        public string Country  { get; set; }
-    }
 }

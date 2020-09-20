@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Mine.Commerce.Domain;
 using Mine.Commerce.Domain.Core;
+using Mine.Commerce.Infrastructure.DBContext;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -21,7 +22,7 @@ namespace Mine.Commerce.Infrastructure.ImplementationRepository
 
         public override async Task<IEnumerable<Category>> GetListAsync(int index, int offset, CancellationToken cancellationToken = default)
         {
-            return await _dbSet.Where(x => !x.IsDeleted).ToListAsync();
+            return await _dbSet.AsQueryable().Where(x => !x.IsDeleted).ToListAsync();
         }
     }
 }

@@ -1,13 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Mine.Commerce.Domain;
-using MineCommerceApplication.Tests.Helper;
-using Moq;
+﻿using MineCommerceApplication.Tests.Helper;
 using System.Threading.Tasks;
-using System.Collections.Generic;
 using System.Net.Http;
 using Xunit;
-using System.Threading;
-
+using Mine.Commerce.Application.Brands;
+using System.Net.Http.Json;
 namespace MineCommerceApplication.Tests.Scenario
 {
     [Collection("CollectionFixture")]
@@ -27,6 +23,19 @@ namespace MineCommerceApplication.Tests.Scenario
         {
 
             var response = await _httpClient.GetAsync("/api/brands");
+            response.EnsureSuccessStatusCode();
+        }
+
+        [Fact]
+        public async Task CreateBrandTestAsync()
+        {
+            var createRequest = new CreateRequest
+            {
+                Name = "Brand 01",
+                Country = "Country 01"
+            };
+            var jsonContent = JsonContent.Create<CreateRequest>(createRequest);
+            var response = await _httpClient.PostAsync("/api/brands", jsonContent);
             response.EnsureSuccessStatusCode();
         }
     }
