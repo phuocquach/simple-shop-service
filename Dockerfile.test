@@ -1,0 +1,9 @@
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
+
+COPY . .
+RUN dotnet restore "./Mine.Commere.Service.sln"
+
+COPY ./.github/tests/start-test.sh /app/start-test.sh
+
+WORKDIR /app
+ENTRYPOINT ["start-test.sh"]

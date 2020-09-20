@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mine.Commerce.Domain.Core.Services.BackgroundJob
 {
-    class CleanDataBackgroundService
+    public class CleanDataBackgroundService
     {
     }
 }
