@@ -1,9 +1,11 @@
 using Microsoft.EntityFrameworkCore;
+using Mine.Commerce.Domain;
+using Mine.Commerce.Domain.Core;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Mine.Commerce.Domain.Core
+namespace Mine.Commerce.Infrastructure.DBContext
 {
     public abstract class DbContextCommandRepository<T> : ICommandRepository<T>
         where T: Entity

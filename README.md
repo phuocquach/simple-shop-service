@@ -8,3 +8,6 @@ docker-compose -f ./docker-compose-soft.yml up
 dotnet ef migrations add InitilaPgDB --project src/Mine.Commerce.Api #add migration
 
 dotnet ef database update --project src/Mine.Commerce.Api
+
+# Dotnet test
+dotnet test /p:CollectCoverage=true

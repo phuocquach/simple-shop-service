@@ -432,10 +432,10 @@
       "Mine.Commerce.Infrastructure.ImplementationRepository.BrandCommandRepository": {
         "System.Void Mine.Commerce.Infrastructure.ImplementationRepository.BrandCommandRepository::.ctor(Microsoft.EntityFrameworkCore.DbContext)": {
           "Lines": {
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0
+            "15": 1,
+            "16": 1,
+            "17": 1,
+            "18": 1
           },
           "Branches": []
         }
@@ -749,9 +749,9 @@
         },
         "System.Void Mine.Commerce.Infrastructure.DBContext.MineCommerceContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<Mine.Commerce.Infrastructure.DBContext.MineCommerceContext>)": {
           "Lines": {
-            "10": 4,
-            "11": 4,
-            "13": 4
+            "10": 5,
+            "11": 5,
+            "13": 5
           },
           "Branches": []
         }
@@ -763,7 +763,7 @@
       "Mine.Commerce.Domain.Entity": {
         "System.Guid Mine.Commerce.Domain.Entity::get_Id()": {
           "Lines": {
-            "9": 0
+            "9": 6
           },
           "Branches": []
         },
@@ -803,7 +803,7 @@
       "Mine.Commerce.Domain.Brand": {
         "System.String Mine.Commerce.Domain.Brand::get_Name()": {
           "Lines": {
-            "7": 0
+            "7": 5
           },
           "Branches": []
         },
@@ -815,14 +815,14 @@
         },
         "Mine.Commerce.Domain.Brand Mine.Commerce.Domain.Brand::Create(System.String,System.String)": {
           "Lines": {
-            "10": 0,
-            "11": 0,
-            "12": 0,
-            "13": 0,
-            "14": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0
+            "10": 1,
+            "11": 1,
+            "12": 1,
+            "13": 1,
+            "14": 1,
+            "15": 1,
+            "16": 1,
+            "17": 1
           },
           "Branches": []
         }
@@ -1189,10 +1189,10 @@
       "Mine.Commerce.Domain.Core.DbContextCommandRepository`1": {
         "System.Void Mine.Commerce.Domain.Core.DbContextCommandRepository`1::.ctor(Microsoft.EntityFrameworkCore.DbContext)": {
           "Lines": {
-            "12": 0,
-            "13": 0,
-            "14": 0,
-            "15": 0
+            "12": 1,
+            "13": 1,
+            "14": 1,
+            "15": 1
           },
           "Branches": []
         }
@@ -1200,9 +1200,9 @@
       "Mine.Commerce.Domain.Core.DbContextCommandRepository`1/<AddAsync>d__2": {
         "System.Void Mine.Commerce.Domain.Core.DbContextCommandRepository`1/<AddAsync>d__2::MoveNext()": {
           "Lines": {
-            "17": 0,
-            "18": 0,
-            "19": 0
+            "17": 1,
+            "18": 1,
+            "19": 1
           },
           "Branches": [
             {
@@ -1219,7 +1219,7 @@
               "EndOffset": 129,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 1
             }
           ]
         }
@@ -1271,10 +1271,10 @@
       "Mine.Commerce.Domain.Core.UnitOfWork": {
         "System.Void Mine.Commerce.Domain.Core.UnitOfWork::.ctor(Microsoft.EntityFrameworkCore.DbContext)": {
           "Lines": {
-            "9": 0,
-            "10": 0,
-            "11": 0,
-            "12": 0
+            "9": 1,
+            "10": 1,
+            "11": 1,
+            "12": 1
           },
           "Branches": []
         }
@@ -1282,9 +1282,9 @@
       "Mine.Commerce.Domain.Core.UnitOfWork/<Commit>d__2": {
         "System.Void Mine.Commerce.Domain.Core.UnitOfWork/<Commit>d__2::MoveNext()": {
           "Lines": {
-            "14": 0,
-            "15": 0,
-            "16": 0
+            "14": 1,
+            "15": 1,
+            "16": 1
           },
           "Branches": []
         }
@@ -1696,7 +1696,7 @@
       "Mine.Commerce.Api.Startup": {
         "Microsoft.Extensions.Configuration.IConfiguration Mine.Commerce.Api.Startup::get_Configuration()": {
           "Lines": {
-            "28": 6
+            "28": 7
           },
           "Branches": []
         },
@@ -1705,15 +1705,15 @@
             "32": 3,
             "33": 3,
             "35": 3,
-            "36": 6,
+            "36": 7,
             "37": 3,
             "38": 3,
             "39": 3,
             "40": 3,
-            "41": 6,
-            "42": 15,
-            "43": 6,
-            "44": 6,
+            "41": 7,
+            "42": 19,
+            "43": 7,
+            "44": 7,
             "45": 3,
             "47": 6,
             "48": 9,
@@ -1916,49 +1916,49 @@
       "Mine.Commerce.Api.ServiceExtension.RegisterServiceExtension": {
         "System.Void Mine.Commerce.Api.ServiceExtension.RegisterServiceExtension::RegisterHanlder(Microsoft.Extensions.DependencyInjection.IServiceCollection)": {
           "Lines": {
-            "15": 6,
-            "16": 6,
-            "17": 6,
-            "18": 6
+            "15": 3,
+            "16": 3,
+            "17": 3,
+            "18": 3
           },
           "Branches": []
         },
         "System.Void Mine.Commerce.Api.ServiceExtension.RegisterServiceExtension::RegisterQueryhandler(Microsoft.Extensions.DependencyInjection.IServiceCollection)": {
           "Lines": {
-            "20": 6,
-            "21": 6,
-            "22": 6,
-            "23": 6,
-            "24": 6,
-            "25": 6,
-            "26": 6
+            "20": 3,
+            "21": 3,
+            "22": 3,
+            "23": 3,
+            "24": 3,
+            "25": 3,
+            "26": 3
           },
           "Branches": []
         },
         "System.Void Mine.Commerce.Api.ServiceExtension.RegisterServiceExtension::ReqgisterCommandHandler(Microsoft.Extensions.DependencyInjection.IServiceCollection)": {
           "Lines": {
-            "29": 6,
-            "30": 6,
-            "31": 6,
-            "32": 6,
-            "34": 6,
-            "35": 6,
-            "36": 6,
-            "38": 6,
-            "39": 6
+            "29": 3,
+            "30": 3,
+            "31": 3,
+            "32": 3,
+            "34": 3,
+            "35": 3,
+            "36": 3,
+            "38": 3,
+            "39": 3
           },
           "Branches": []
         },
         "System.Void Mine.Commerce.Api.ServiceExtension.RegisterServiceExtension::RegisterRepository(Microsoft.Extensions.DependencyInjection.IServiceCollection)": {
           "Lines": {
-            "41": 6,
-            "42": 6,
-            "43": 6,
-            "44": 6,
-            "46": 6,
-            "47": 6,
-            "48": 6,
-            "50": 6
+            "41": 3,
+            "42": 3,
+            "43": 3,
+            "44": 3,
+            "46": 3,
+            "47": 3,
+            "48": 3,
+            "50": 3
           },
           "Branches": []
         }
@@ -2829,9 +2829,9 @@
       "Mine.Commerce.Api.Controllers.ApiController": {
         "MediatR.IMediator Mine.Commerce.Api.Controllers.ApiController::get_Mediator()": {
           "Lines": {
-            "14": 3,
-            "15": 3,
-            "16": 3
+            "14": 4,
+            "15": 4,
+            "16": 4
           },
           "Branches": []
         }
@@ -2841,9 +2841,9 @@
       "Mine.Commerce.Api.Controllers.BrandsController/<PostBrand>d__0": {
         "System.Void Mine.Commerce.Api.Controllers.BrandsController/<PostBrand>d__0::MoveNext()": {
           "Lines": {
-            "17": 0,
-            "18": 0,
-            "19": 0
+            "17": 1,
+            "18": 1,
+            "19": 1
           },
           "Branches": []
         }
@@ -3843,12 +3843,12 @@
       "Mine.Commerce.Application.Brands.CreateHandler": {
         "System.Void Mine.Commerce.Application.Brands.CreateHandler::.ctor(Mine.Commerce.Domain.Core.ICommandRepository`1<Mine.Commerce.Domain.Brand>,Mine.Commerce.Domain.Core.IUnitOfWork)": {
           "Lines": {
-            "14": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
+            "14": 1,
+            "15": 1,
+            "16": 1,
+            "17": 1,
+            "18": 1,
+            "19": 1
           },
           "Branches": []
         }
@@ -3856,12 +3856,12 @@
       "Mine.Commerce.Application.Brands.CreateHandler/<Handle>d__3": {
         "System.Void Mine.Commerce.Application.Brands.CreateHandler/<Handle>d__3::MoveNext()": {
           "Lines": {
-            "21": 0,
-            "22": 0,
-            "23": 0,
-            "24": 0,
-            "26": 0,
-            "27": 0
+            "21": 1,
+            "22": 1,
+            "23": 1,
+            "24": 1,
+            "26": 1,
+            "27": 1
           },
           "Branches": []
         }
@@ -3869,13 +3869,13 @@
       "Mine.Commerce.Application.Brands.CreateRequest": {
         "System.String Mine.Commerce.Application.Brands.CreateRequest::get_Name()": {
           "Lines": {
-            "32": 0
+            "32": 4
           },
           "Branches": []
         },
         "System.String Mine.Commerce.Application.Brands.CreateRequest::get_Country()": {
           "Lines": {
-            "33": 0
+            "33": 4
           },
           "Branches": []
         }
@@ -4147,13 +4147,13 @@
       "Mine.Commerce.Application.Features.Brands.BrandDto": {
         "System.Guid Mine.Commerce.Application.Features.Brands.BrandDto::get_Id()": {
           "Lines": {
-            "7": 0
+            "7": 8
           },
           "Branches": []
         },
         "System.String Mine.Commerce.Application.Features.Brands.BrandDto::get_Name()": {
           "Lines": {
-            "8": 0
+            "8": 8
           },
           "Branches": []
         }
