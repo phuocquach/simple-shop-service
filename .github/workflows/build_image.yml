@@ -17,4 +17,4 @@ jobs:
           dotnet build
     - name: Publish
       run: |
-          dotnet publish -p ./src/Mine.Commerce.Api
+          dotnet publish ./src/Mine.Commerce.Api
