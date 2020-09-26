@@ -2,6 +2,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
+using Mapster;
 using MediatR;
 using Mine.Commerce.Domain;
 using Mine.Commerce.Domain.Core;
@@ -22,8 +23,8 @@ namespace Mine.Commerce.Application.Categories.Commands.Handler
         }
         public async Task<Guid> Handle(CreateRequest request, CancellationToken cancellationToken)
         {
-            var category = Category.Create(request.Name);
-
+            var category = request.Adapt<Category>();
+            category.Id = Guid.NewGuid();
             await _categoryRepository.AddAsync(category);
             await _unitOfWork.Commit();
 

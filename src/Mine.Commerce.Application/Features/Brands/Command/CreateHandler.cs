@@ -22,6 +22,8 @@ namespace Mine.Commerce.Application.Brands
         public async Task<Guid> Handle(CreateRequest request, CancellationToken cancellationToken)
         {
             var brand = request.Adapt<Brand>();
+            brand.Id = Guid.NewGuid();
+            
             await _brandRepository.AddAsync(brand);
             await _unitOfWork.Commit();
             
