@@ -12,7 +12,6 @@ jobs:
         password: ${{ secrets.acr_mmondocker_password }}
     
     - name: Build
-      id: Dotnet Build
       run: |
           dotnet restore
           dotnet build
