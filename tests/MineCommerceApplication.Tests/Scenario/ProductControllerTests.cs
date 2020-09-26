@@ -26,16 +26,16 @@ namespace MineCommerceApplication.Tests.Scenario
             response.EnsureSuccessStatusCode();
         }
 
-        [Fact]
-        public async System.Threading.Tasks.Task CreateProductTestAsync()
-        {
-            var createRequest = new CreateRequest
-            {
-                Name = "Product 01",
-            };
-            var jsonContent = JsonContent.Create<CreateRequest>(createRequest);
-            var response = await _httpClient.PostAsync("/api/products", jsonContent);
-            response.EnsureSuccessStatusCode();
-        }
+        // [Fact]
+        // public async System.Threading.Tasks.Task CreateProductTestAsync()
+        // {
+        //     var createRequest = new CreateRequest
+        //     {
+        //         Name = "Product 01",
+        //     };
+        //     var jsonContent = JsonContent.Create<CreateRequest>(createRequest);
+        //     var response = await _httpClient.PostAsync("/api/products", jsonContent);
+        //     response.EnsureSuccessStatusCode();
+        // }
     }
 }

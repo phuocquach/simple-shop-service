@@ -8,10 +8,11 @@ using MediatR;
 using Mine.Commerce.Domain;
 using Mine.Commerce.Domain.Core;
 using Mine.Commerce.Application.Features.Brands;
+using Mine.Commerce.Domain.Core.Handler;
 
 namespace Mine.Commerce.Application.Brands.Queries
 {
-    public class GetAllHandler : Basehandler, IRequestHandler<GetAllRequest, IEnumerable<BrandDto>>
+    public class GetAllHandler : BaseHandler, IRequestHandler<GetAllRequest, IEnumerable<BrandDto>>
     {
         private IQueryRepository<Brand> _brandRepository { get; set; }
         private IMapper _mapper {get; set;}

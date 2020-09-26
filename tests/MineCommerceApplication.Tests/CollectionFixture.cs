@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Authentication;
+﻿using MediatR;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Mine.Commerce.Api;
+using Mine.Commerce.Domain.Core.Handler;
 using Mine.Commerce.Infrastructure.Services.gRpc.ProductsService;
 using MineCommerceApplication.Tests.Helper;
 using MineCommerceApplication.Tests.Middlewares;
@@ -42,6 +44,7 @@ namespace MineCommerceApplication.Tests
                     options.DefaultAuthenticateScheme = "Test";
                     options.DefaultChallengeScheme = "Test";
                 });
+                services.AddScoped(typeof(IRequestHandler<,>), typeof(BaseHandler));
             });
 
             builder.Configure(app => Configure(app));
