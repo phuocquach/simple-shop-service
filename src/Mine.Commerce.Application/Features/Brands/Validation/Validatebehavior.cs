@@ -8,6 +8,10 @@ namespace Mine.Commerce.Application.Features.Brands.Validation
 {
     public class Validatebehavior : IPipelineBehavior<CreateRequest, Guid>
     {
+        public Validatebehavior()
+        {
+            
+        }
         public async Task<Guid> Handle(CreateRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<Guid> next)
         {
             var response = await next();

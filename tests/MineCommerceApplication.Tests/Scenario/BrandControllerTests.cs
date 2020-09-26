@@ -21,7 +21,6 @@ namespace MineCommerceApplication.Tests.Scenario
         [Fact]
         public async System.Threading.Tasks.Task GetListBrandTestAsync()
         {
-
             var response = await _httpClient.GetAsync("/api/brands");
             response.EnsureSuccessStatusCode();
         }
