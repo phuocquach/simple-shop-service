@@ -8,7 +8,7 @@ using Mine.Commerce.Domain.Core.Handler;
 
 namespace Mine.Commerce.Application.Categories.Commands.Handler
 {
-    public class DeleteHandler : BaseHandler, IRequestHandler<DeleteRequest>
+    public class DeleteHandler : IRequestHandler<DeleteRequest>
     {
         private readonly ICommandRepository<Category> _commandRepository;
         private readonly IUnitOfWork _unitOfWork;

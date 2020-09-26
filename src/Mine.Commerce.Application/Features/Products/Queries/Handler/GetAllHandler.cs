@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Mine.Commerce.Application.Products.Query
 {
-    public class GetAllHandler : BaseHandler, IRequestHandler<GetAllRequest, IEnumerable<ProductDto>>
+    public class GetAllHandler : IRequestHandler<GetAllRequest, IEnumerable<ProductDto>>
     {
         private IQueryRepository<Product> _productRepository { get; set; }
         private readonly MineCommerceContext _dbContext;

@@ -65,8 +65,7 @@ namespace Mine.Commerce.Api
             services.AddScoped<DbContext, MineCommerceContext>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddAutoMapper(typeof(Startup).Assembly, typeof(ProductProfile).Assembly);
-            services.AddMediatR(typeof(Startup));
-            services.RegisterHanlder();
+            services.AddMediatR(typeof(Startup), typeof(ProductProfile), typeof(MineCommerceContext), typeof(UnitOfWork));
             services.RegisterRepository();
             services.AddScoped<IStorageService, AzureblobStorage>();
             services.AddGrpc();

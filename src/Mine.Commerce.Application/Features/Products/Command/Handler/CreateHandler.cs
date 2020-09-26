@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Mine.Commerce.Application.Products.Command
 {
-    public class CreateHandler : BaseHandler, IRequestHandler<CreateRequest, ProductDto>
+    public class CreateHandler : IRequestHandler<CreateRequest, ProductDto>
     {
         private readonly ICommandRepository<Product> _productRepository;
         private readonly IMapper _mapper;

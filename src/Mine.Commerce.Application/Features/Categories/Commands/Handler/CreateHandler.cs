@@ -9,7 +9,7 @@ using Mine.Commerce.Domain.Core.Handler;
 
 namespace Mine.Commerce.Application.Categories.Commands.Handler
 {
-    public class CreateHandler : BaseHandler, IRequestHandler<CreateRequest,Guid>
+    public class CreateHandler : IRequestHandler<CreateRequest,Guid>
     {
         private readonly ICommandRepository<Category> _categoryRepository;
         private readonly IMapper _mapper;

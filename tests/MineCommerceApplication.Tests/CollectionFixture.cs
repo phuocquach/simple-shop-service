@@ -44,7 +44,6 @@ namespace MineCommerceApplication.Tests
                     options.DefaultAuthenticateScheme = "Test";
                     options.DefaultChallengeScheme = "Test";
                 });
-                services.AddScoped(typeof(IRequestHandler<,>), typeof(BaseHandler));
             });
 
             builder.Configure(app => Configure(app));

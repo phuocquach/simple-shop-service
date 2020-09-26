@@ -10,7 +10,7 @@ using Mine.Commerce.Domain.Core.Handler;
 
 namespace Mine.Commerce.Application.Products.Query
 {
-    public class GetByIdHandler : BaseHandler, IRequestHandler<GetById, ProductDto>
+    public class GetByIdHandler : IRequestHandler<GetById, ProductDto>
     {
         private IQueryRepository<Product> _productRepository { get; set; }
         private IMapper _mapper {get; set;}

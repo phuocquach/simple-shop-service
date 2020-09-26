@@ -12,7 +12,7 @@ using Mine.Commerce.Domain.Core.Services.StorageService;
 
 namespace Mine.Commerce.Application.Products.Queries
 {
-    public class GetImageByProductIdHandler : BaseHandler, IRequestHandler<GetImageByProductId, string>
+    public class GetImageByProductIdHandler : IRequestHandler<GetImageByProductId, string>
     {
         private readonly IStorageService _storageService;
         private readonly IQueryRepository<Product> _productRepository;

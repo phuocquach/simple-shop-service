@@ -8,7 +8,7 @@ using Mine.Commerce.Domain.Core.Handler;
 
 namespace Mine.Commerce.Application.Products.Command
 {
-    public class UpdateHandler : BaseHandler, IRequestHandler<UpdateRequest, ProductDto>
+    public class UpdateHandler : IRequestHandler<UpdateRequest, ProductDto>
     {
         private readonly ICommandRepository<Product> _productRepository;
         private readonly IMapper _mapper;

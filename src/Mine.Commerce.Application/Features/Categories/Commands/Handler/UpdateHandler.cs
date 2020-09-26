@@ -9,7 +9,7 @@ using Mine.Commerce.Domain.Core.Handler;
 
 namespace Mine.Commerce.Application.Categories.Commands.Handler
 {
-    public class UpdateHandler : BaseHandler, IRequestHandler<UpdateRequest, CategoryDto>
+    public class UpdateHandler : IRequestHandler<UpdateRequest, CategoryDto>
     {
         private readonly ICommandRepository<Category> _categoryRepository;
         private readonly IQueryRepository<Category> _categoryQueryRepository;

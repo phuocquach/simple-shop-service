@@ -8,7 +8,7 @@ using Mine.Commerce.Domain.Core.Handler;
 
 namespace Mine.Commerce.Application.Products.Command.Handler
 {
-    public class DeleteHandler : BaseHandler, IRequestHandler<DeleteRequest>
+    public class DeleteHandler : IRequestHandler<DeleteRequest>
     {
         private readonly ICommandRepository<Product> _commandRepository;
         private readonly IMapper _mapper;
