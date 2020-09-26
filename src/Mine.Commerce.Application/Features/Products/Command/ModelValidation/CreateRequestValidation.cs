@@ -1,7 +1,7 @@
 using FluentValidation;
-using Mine.Commerce.Application.Products.Command;
+using Mine.Commerce.Application.Products;
 
-namespace Mine.Commerce.Application.Features.Products.Command
+namespace Mine.Commerce.Application.Features.Products
 {
     public class CreateRequestValidator : AbstractValidator<CreateRequest> 
     {

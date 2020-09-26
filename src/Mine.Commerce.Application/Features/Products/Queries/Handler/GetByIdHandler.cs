@@ -6,10 +6,11 @@ using MediatR;
 using Mine.Commerce.Application.Products;
 using Mine.Commerce.Domain;
 using Mine.Commerce.Domain.Core;
+using Mine.Commerce.Domain.Core.Handler;
 
 namespace Mine.Commerce.Application.Products.Query
 {
-    public class GetByIdHandler : IRequestHandler<GetById, ProductDto>
+    public class GetByIdHandler : BaseHandler, IRequestHandler<GetById, ProductDto>
     {
         private IQueryRepository<Product> _productRepository { get; set; }
         private IMapper _mapper {get; set;}

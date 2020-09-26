@@ -5,10 +5,11 @@ using AutoMapper;
 using MediatR;
 using Mine.Commerce.Domain;
 using Mine.Commerce.Domain.Core;
+using Mine.Commerce.Domain.Core.Handler;
 
 namespace Mine.Commerce.Application.Categories.Commands.Handler
 {
-    public class UpdateHandler : IRequestHandler<UpdateRequest, CategoryDto>
+    public class UpdateHandler : BaseHandler, IRequestHandler<UpdateRequest, CategoryDto>
     {
         private readonly ICommandRepository<Category> _categoryRepository;
         private readonly IQueryRepository<Category> _categoryQueryRepository;

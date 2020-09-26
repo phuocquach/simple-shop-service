@@ -2,6 +2,7 @@ using AutoMapper;
 using MediatR;
 using Mine.Commerce.Domain;
 using Mine.Commerce.Domain.Core;
+using Mine.Commerce.Domain.Core.Handler;
 using Mine.Commerce.Infrastructure.DBContext;
 using System.Collections.Generic;
 using System.Threading;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Mine.Commerce.Application.Products.Query
 {
-    public class GetAllHandler : IRequestHandler<GetAllRequest, IEnumerable<ProductDto>>
+    public class GetAllHandler : BaseHandler, IRequestHandler<GetAllRequest, IEnumerable<ProductDto>>
     {
         private IQueryRepository<Product> _productRepository { get; set; }
         private readonly MineCommerceContext _dbContext;

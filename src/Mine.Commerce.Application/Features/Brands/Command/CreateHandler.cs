@@ -5,10 +5,11 @@ using Mapster;
 using MediatR;
 using Mine.Commerce.Domain;
 using Mine.Commerce.Domain.Core;
+using Mine.Commerce.Domain.Core.Handler;
 
 namespace Mine.Commerce.Application.Brands
 {
-    public class CreateHandler : IRequestHandler<CreateRequest, Guid>
+    public class CreateHandler : BaseHandler, IRequestHandler<CreateRequest, Guid>
     {
         private readonly ICommandRepository<Brand> _brandRepository;
         private readonly IUnitOfWork _unitOfWork;

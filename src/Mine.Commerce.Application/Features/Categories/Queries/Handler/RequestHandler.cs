@@ -6,10 +6,11 @@ using Mine.Commerce.Domain;
 using Mine.Commerce.Domain.Core;
 using System.Threading.Tasks;
 using AutoMapper;
+using Mine.Commerce.Domain.Core.Handler;
 
 namespace Mine.Commerce.Application.Categories.Queries.Handler
 {
-    public class RequestHandler : IRequestHandler<GetByIdRequest, CategoryDto>,
+    public class RequestHandler : BaseHandler, IRequestHandler<GetByIdRequest, CategoryDto>,
                                     IRequestHandler<GetListRequest, IEnumerable<CategoryDto>>
     {
         private readonly IQueryRepository<Category> _queryRepository;

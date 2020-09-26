@@ -2,6 +2,7 @@ using AutoMapper;
 using MediatR;
 using Mine.Commerce.Domain;
 using Mine.Commerce.Domain.Core;
+using Mine.Commerce.Domain.Core.Handler;
 using Mine.Commerce.Domain.Core.Services.StorageService;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Mine.Commerce.Application.Products.Command
 {
-    public class CreateHandler : IRequestHandler<CreateRequest, ProductDto>
+    public class CreateHandler : BaseHandler, IRequestHandler<CreateRequest, ProductDto>
     {
         private readonly ICommandRepository<Product> _productRepository;
         private readonly IMapper _mapper;

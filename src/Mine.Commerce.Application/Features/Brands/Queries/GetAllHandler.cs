@@ -11,7 +11,7 @@ using Mine.Commerce.Application.Features.Brands;
 
 namespace Mine.Commerce.Application.Brands.Queries
 {
-    public class GetAllHandler : IRequestHandler<GetAllRequest, IEnumerable<BrandDto>>
+    public class GetAllHandler : Basehandler, IRequestHandler<GetAllRequest, IEnumerable<BrandDto>>
     {
         private IQueryRepository<Brand> _brandRepository { get; set; }
         private IMapper _mapper {get; set;}

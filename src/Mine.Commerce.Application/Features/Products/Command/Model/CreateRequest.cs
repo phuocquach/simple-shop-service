@@ -2,7 +2,7 @@ using MediatR;
 using Microsoft.AspNetCore.Http;
 using System;
 
-namespace Mine.Commerce.Application.Products.Command
+namespace Mine.Commerce.Application.Products
 {
     public class CreateRequest : IRequest<ProductDto> 
     {

@@ -4,10 +4,11 @@ using AutoMapper;
 using MediatR;
 using Mine.Commerce.Domain;
 using Mine.Commerce.Domain.Core;
+using Mine.Commerce.Domain.Core.Handler;
 
 namespace Mine.Commerce.Application.Products.Command.Handler
 {
-    public class DeleteHandler : IRequestHandler<DeleteRequest>
+    public class DeleteHandler : BaseHandler, IRequestHandler<DeleteRequest>
     {
         private readonly ICommandRepository<Product> _commandRepository;
         private readonly IMapper _mapper;
