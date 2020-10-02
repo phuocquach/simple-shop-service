@@ -1,9 +1,11 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Mapster;
 using MediatR;
 using Mine.Commerce.Domain;
 using Mine.Commerce.Domain.Core;
+using Mine.Commerce.Domain.Core.Handler;
 
 namespace Mine.Commerce.Application.Brands
 {
@@ -12,14 +14,16 @@ namespace Mine.Commerce.Application.Brands
         private readonly ICommandRepository<Brand> _brandRepository;
         private readonly IUnitOfWork _unitOfWork;
         public CreateHandler(ICommandRepository<Brand> brandRepository, 
-                                IUnitOfWork unitOfWork )
+                             IUnitOfWork unitOfWork )
         {
             _brandRepository = brandRepository;
             _unitOfWork = unitOfWork;
         }        
         public async Task<Guid> Handle(CreateRequest request, CancellationToken cancellationToken)
         {
-            var brand = Brand.Create(request.Name, request.Country);
+            var brand = request.Adapt<Brand>();
+            brand.Id = Guid.NewGuid();
+            
             await _brandRepository.AddAsync(brand);
             await _unitOfWork.Commit();
             

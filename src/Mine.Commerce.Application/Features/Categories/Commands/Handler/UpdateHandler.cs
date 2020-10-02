@@ -5,6 +5,7 @@ using AutoMapper;
 using MediatR;
 using Mine.Commerce.Domain;
 using Mine.Commerce.Domain.Core;
+using Mine.Commerce.Domain.Core.Handler;
 
 namespace Mine.Commerce.Application.Categories.Commands.Handler
 {

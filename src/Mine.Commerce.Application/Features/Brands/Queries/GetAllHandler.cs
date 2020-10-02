@@ -8,6 +8,7 @@ using MediatR;
 using Mine.Commerce.Domain;
 using Mine.Commerce.Domain.Core;
 using Mine.Commerce.Application.Features.Brands;
+using Mine.Commerce.Domain.Core.Handler;
 
 namespace Mine.Commerce.Application.Brands.Queries
 {

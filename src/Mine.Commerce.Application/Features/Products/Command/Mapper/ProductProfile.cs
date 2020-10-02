@@ -7,7 +7,7 @@ namespace Mine.Commerce.Application.Products
     {
         public ProductProfile()
         {
-            CreateMap<Command.CreateRequest, Product>();
+            CreateMap<CreateRequest, Product>();
             CreateMap<Command.UpdateRequest, Product>();
             CreateMap<Product, ProductDto>().ReverseMap();
             CreateMap<ProductCategory, ProductCategoryDto>().ReverseMap();

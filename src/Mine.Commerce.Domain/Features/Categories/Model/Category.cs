@@ -11,16 +11,5 @@ namespace Mine.Commerce.Domain
         public bool IsActive { get; set; }
         [JsonIgnore]
         public ICollection<ProductCategory> ProductCategories { get; set; }
-        public static Category Create(string name)
-        {
-            return new Category
-            {
-                Id = Guid.NewGuid(),
-                Name = name,
-                IsActive = true,
-                IsDeleted = false,
-                ProductCategories = Enumerable.Empty<ProductCategory>().ToList()
-            };
-        }
     }
 }

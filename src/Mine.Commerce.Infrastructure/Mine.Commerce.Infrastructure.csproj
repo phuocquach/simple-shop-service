@@ -14,7 +14,7 @@
     <PackageReference Include="AutoMapper" Version="9.0.0"/>
     <PackageReference Include="MediatR" Version="8.1.0"/>
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2"/>
-     <PackageReference Include="Grpc.AspNetCore" Version="2.30.0"/>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.30.0"/>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.4"/>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.4">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -38,6 +38,7 @@
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1"/>
     <PackageReference Include="System.Linq.Async" Version="4.1.1"/>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.4"/>
+    <PackageReference Include="Mapster" Version="6.5.0"/>
   </ItemGroup>
   <ItemGroup>
     <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">

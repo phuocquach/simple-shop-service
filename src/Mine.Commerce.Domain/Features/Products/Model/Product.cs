@@ -18,37 +18,5 @@ namespace Mine.Commerce.Domain
         [JsonIgnore]
         public ICollection<ProductCategory> ProductCategories { get; set; }
         public Brand Brand { get; set; }
-
-        public static Product Create(string name, 
-                                    double price, 
-                                    bool inStock, 
-                                    string productCode,
-                                    IEnumerable<Guid> categoryIds,
-                                    string imageUrl,
-                                    Guid brandId,
-                                    string description)
-        {
-            var productId = Guid.NewGuid();
-            return new Product
-            {
-                Id = productId,
-                Name = name,
-                Price = price,
-                ProductCode = productCode,
-                InStock = inStock,
-                ProductCategories = categoryIds.Select(x=> new ProductCategory{ ProductId = productId, CategoryId = x}).ToList(),
-                //Categories = categoryIds,
-                BrandId = brandId,
-                Description =description,
-                CreatedDateUtc = DateTime.UtcNow,
-                ProductImages = new List<ProductImage>() {new ProductImage
-                {
-                    Id = Guid.NewGuid(),
-                    StorageUrl = imageUrl,
-                    IsPrimary = true,
-                    ProductId = productId
-                }}
-            };
-        }
     }
 }

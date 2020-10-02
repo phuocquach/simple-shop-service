@@ -6,6 +6,7 @@ using MediatR;
 using Mine.Commerce.Application.Products;
 using Mine.Commerce.Domain;
 using Mine.Commerce.Domain.Core;
+using Mine.Commerce.Domain.Core.Handler;
 
 namespace Mine.Commerce.Application.Products.Query
 {

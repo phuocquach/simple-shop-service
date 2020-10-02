@@ -2,6 +2,7 @@ using AutoMapper;
 using MediatR;
 using Mine.Commerce.Domain;
 using Mine.Commerce.Domain.Core;
+using Mine.Commerce.Domain.Core.Handler;
 using Mine.Commerce.Infrastructure.DBContext;
 using System.Collections.Generic;
 using System.Threading;
