@@ -5,14 +5,15 @@
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>.</DockerfileContext>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Mine.eCommere.Api' " />
   <ItemGroup>
-    <ProjectReference Include="..\Mine.Commerce.Application\Mine.Commerce.Application.csproj"/>
-    <ProjectReference Include="..\Mine.Commerce.Infrastructure\Mine.Commerce.Infrastructure.csproj"/>
+    <ProjectReference Include="..\Mine.Commerce.Application\Mine.Commerce.Application.csproj" />
+    <ProjectReference Include="..\Mine.Commerce.Infrastructure\Mine.Commerce.Infrastructure.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="SeedData\BrandsData\"/>
+    <Folder Include="SeedData\BrandsData\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Cert\Sd3540.pfx" CopyToPublishDirectory="Always"/>
+    <Content Include="Cert\Sd3540.pfx" CopyToPublishDirectory="Always" />
   </ItemGroup>
 </Project>
