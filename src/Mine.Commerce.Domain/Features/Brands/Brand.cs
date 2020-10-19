@@ -6,5 +6,10 @@ namespace Mine.Commerce.Domain
     {
         public string Name { get; set; }
         public string Country { get; set; }
+
+        public Brand()
+        {
+            Id = Guid.NewGuid();
+        }
     }
 }

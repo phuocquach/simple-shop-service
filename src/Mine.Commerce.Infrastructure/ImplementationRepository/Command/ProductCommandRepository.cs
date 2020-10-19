@@ -36,12 +36,14 @@ namespace Mine.Commerce.Infrastructure.ImplementationRepository
             // }));
             item.ProductCategories?.Select(async x => await _productCategoryDbSet.AddAsync(x));
             item.ProductImages.Select(async x => await _productImageDbset.AddAsync(x));
+            await _dbContext.SaveChangesAsync();
         }
 
         public async override Task UpdateAsync(Product item, CancellationToken cancellationToken = default(CancellationToken))
         {
             //var product = _dbsetProduct.FirstAsync(x => x.Id == item.Id);
             _dbsetProduct.Update(item);
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

@@ -6,7 +6,7 @@ namespace Mine.Commerce.Domain
     public class Address
     {
         [Key]
-        public Guid Guid { get; set; }
+        public Guid Id { get; set; }
         public Guid CustomerId { get; set; }
         public string City { get; set; }
         public string District { get; set; }

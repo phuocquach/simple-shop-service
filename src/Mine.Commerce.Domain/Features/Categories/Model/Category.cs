@@ -11,5 +11,9 @@ namespace Mine.Commerce.Domain
         public bool IsActive { get; set; }
         [JsonIgnore]
         public ICollection<ProductCategory> ProductCategories { get; set; }
+        public Category()
+        {
+            Id = Guid.NewGuid();
+        }
     }
 }
