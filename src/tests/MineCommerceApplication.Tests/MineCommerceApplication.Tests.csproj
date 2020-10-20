@@ -32,6 +32,6 @@
     <PackageReference Include="System.Net.Http.Json" Version="3.2.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Mine.Commerce.Api\Mine.Commerce.Api.csproj" />
+    <ProjectReference Include="..\..\Mine.Commerce.Api\Mine.Commerce.Api.csproj" />
   </ItemGroup>
 </Project>
