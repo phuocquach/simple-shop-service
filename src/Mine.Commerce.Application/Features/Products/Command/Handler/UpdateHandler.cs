@@ -1,11 +1,9 @@
-using System.Threading;
-using System.Threading.Tasks;
-using AutoMapper;
 using Mapster;
 using MediatR;
 using Mine.Commerce.Domain;
 using Mine.Commerce.Domain.Core;
-using Mine.Commerce.Domain.Core.Handler;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Mine.Commerce.Application.Products.Command
 {

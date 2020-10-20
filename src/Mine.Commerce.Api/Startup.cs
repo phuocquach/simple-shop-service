@@ -32,10 +32,6 @@ namespace Mine.Commerce.Api
 
             services.AddDbContext<MineCommerceContext>(options =>
             {
-                // options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"),
-                //     builder => { builder.MigrationsAssembly("Mine.Commerce.Api"); });
-               //options.UseNpgSql(Configuration.GetConnectionString("DefaultConnection"),
-               //     builder => { builder.MigrationsAssembly("Mine.Commerce.Api"); });
                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"),
                     builder => { builder.MigrationsAssembly("Mine.Commerce.Api"); }
                );
@@ -61,10 +57,11 @@ namespace Mine.Commerce.Api
             });
 
             services.AddScoped<DbContext, MineCommerceContext>();
-            services.AddMediatR(typeof(Startup), typeof(ProductProfile), typeof(MineCommerceContext), typeof(Entity));
-            services.RegisterRepository(typeof(Startup).Assembly, typeof(ProductProfile).Assembly, typeof(MineCommerceContext).Assembly, typeof(Entity).Assembly);
+            services.AddMediatR(typeof(Startup), typeof(GetAllRequest), typeof(MineCommerceContext), typeof(Entity));
+            services.RegisterRepository(typeof(Startup).Assembly, typeof(GetAllRequest).Assembly, typeof(MineCommerceContext).Assembly, typeof(Entity).Assembly);
             services.AddScoped<IStorageService, AzureblobStorage>();
             services.AddGrpc();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -74,11 +71,9 @@ namespace Mine.Commerce.Api
             {
                 app.UseDeveloperExceptionPage();
                 app.UseCertificateForwarding();
-                using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
-                {
-                    var applicationDbContext = serviceScope.ServiceProvider.GetRequiredService<MineCommerceContext>();
-                    applicationDbContext.Database.Migrate();
-                }
+                using var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope();
+                var applicationDbContext = serviceScope.ServiceProvider.GetRequiredService<MineCommerceContext>();
+                applicationDbContext.Database.Migrate();
             }
 
             app.UseStaticFiles();

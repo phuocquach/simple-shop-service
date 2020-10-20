@@ -1,4 +1,3 @@
-using AutoMapper;
 using Mapster;
 using MediatR;
 using Mine.Commerce.Domain;
@@ -14,14 +13,11 @@ namespace Mine.Commerce.Application.Products.Command
     public class CreateHandler : IRequestHandler<CreateRequest, ProductDto>
     {
         private readonly ICommandRepository<Product> _productRepository;
-        private readonly IMapper _mapper;
         private readonly IStorageService _storageService;
-        public CreateHandler(ICommandRepository<Product> productRepository, 
-                                IMapper mapper,
+        public CreateHandler(ICommandRepository<Product> productRepository,
                                 IStorageService storageService)
         {
             _productRepository = productRepository;
-            _mapper = mapper;
             _storageService = storageService;
         }
         public async Task<ProductDto> Handle(CreateRequest request, CancellationToken cancellationToken)
@@ -51,14 +47,14 @@ namespace Mine.Commerce.Application.Products.Command
             };
             await _productRepository.AddAsync(product);
 
-            return _mapper.Map<ProductDto>(product);
+            return product.Adapt<ProductDto>();
         }
 
         public async Task<ProductDto> Handle(UpdateRequest request, CancellationToken cancellationToken)
         {
-            var product = _mapper.Map<Product>(request);
+            var product = request.Adapt<Product>();
             await _productRepository.UpdateAsync(product);
-            return _mapper.Map<ProductDto>(product);
+            return product.Adapt<ProductDto>();
         }
     }
 }
