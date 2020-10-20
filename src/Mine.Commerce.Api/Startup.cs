@@ -29,7 +29,6 @@ namespace Mine.Commerce.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
             services.AddDbContext<MineCommerceContext>(options =>
             {
                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"),
@@ -37,7 +36,6 @@ namespace Mine.Commerce.Api
                );
             });
             services.AddSwaggerService(Configuration);
-
             services.AddCors(o => o.AddPolicy("AllowAllPolicy", builder =>
             {
                 builder.AllowAnyOrigin()
