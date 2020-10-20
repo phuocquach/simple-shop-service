@@ -1,9 +1,8 @@
-using System.Threading;
-using System.Threading.Tasks;
-using AutoMapper;
 using MediatR;
 using Mine.Commerce.Domain;
 using Mine.Commerce.Domain.Core;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Mine.Commerce.Application.Products.Command.Handler
 {

@@ -1,12 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Threading;
+using Mapster;
 using MediatR;
 using Mine.Commerce.Domain;
 using Mine.Commerce.Domain.Core;
-using System.Threading.Tasks;
-using AutoMapper;
 using Mine.Commerce.Domain.Core.Handler;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Mine.Commerce.Application.Categories.Queries.Handler
 {
@@ -14,22 +13,21 @@ namespace Mine.Commerce.Application.Categories.Queries.Handler
                                     IRequestHandler<GetListRequest, IEnumerable<CategoryDto>>
     {
         private readonly IQueryRepository<Category> _queryRepository;
-        private readonly IMapper _mapper;
-        public RequestHandler(IQueryRepository<Category> queryRepository,
-                                IMapper mapper)
+        public RequestHandler(IQueryRepository<Category> queryRepository)
         {
             _queryRepository = queryRepository;
-            _mapper = mapper;
         }
 
         public async Task<CategoryDto> Handle(GetByIdRequest request, CancellationToken cancellationToken)
         {
-            return _mapper.Map<CategoryDto>(await _queryRepository.Get(request.Id));
+            var category = await _queryRepository.Get(request.Id);
+            return category.Adapt<CategoryDto>();
         } 
 
         public async Task<IEnumerable<CategoryDto>> Handle(GetListRequest request, CancellationToken cancellationToken)
         {
-            return _mapper.Map<IEnumerable<CategoryDto>> ((await _queryRepository.GetAll()).items);
+            var (items, total) = await _queryRepository.GetAll();
+            return items.Adapt<IEnumerable<CategoryDto>>();
         }
     }
 }

@@ -1,31 +1,25 @@
-using System;
-using System.Linq;
+using Mapster;
+using MediatR;
+using Mine.Commerce.Application.Features.Brands;
+using Mine.Commerce.Domain;
+using Mine.Commerce.Domain.Core;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using AutoMapper;
-using MediatR;
-using Mine.Commerce.Domain;
-using Mine.Commerce.Domain.Core;
-using Mine.Commerce.Application.Features.Brands;
-using Mine.Commerce.Domain.Core.Handler;
 
 namespace Mine.Commerce.Application.Brands.Queries
 {
     public class GetAllHandler : IRequestHandler<GetAllRequest, IEnumerable<BrandDto>>
     {
         private IQueryRepository<Brand> _brandRepository { get; set; }
-        private IMapper _mapper {get; set;}
-        public GetAllHandler(IQueryRepository<Brand> brandRepository, 
-                                    IMapper mapper )
+        public GetAllHandler(IQueryRepository<Brand> brandRepository)
         {
             _brandRepository = brandRepository;
-            _mapper = mapper;
         }
         public async Task<IEnumerable<BrandDto>> Handle(GetAllRequest request, CancellationToken cancellationToken)
         {
             var (brands, total) = await _brandRepository.GetAll();
-            return _mapper.Map<IEnumerable<BrandDto>>(brands);
+            return brands.Adapt<IEnumerable<BrandDto>>();
         }
     }
 }

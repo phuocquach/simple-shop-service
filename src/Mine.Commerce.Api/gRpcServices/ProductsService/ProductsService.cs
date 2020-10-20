@@ -1,8 +1,7 @@
-using AutoMapper;
 using Grpc.Core;
+using Mapster;
 using MediatR;
 using Mine.Commerce.Application.Products;
-using Mine.Commerce.Application.Products.Queries;
 using Mine.Commerce.V1;
 using System;
 using System.Collections.Generic;
@@ -13,14 +12,10 @@ namespace Mine.Commerce.Infrastructure.Services.gRpc.ProductsService
 {
     public class ProductsService : Products.ProductsBase
     {
-
         private readonly IMediator _mediator;
-        private readonly IMapper _mapper;
-        public ProductsService(IMediator mediator,
-                                IMapper mapper)
+        public ProductsService(IMediator mediator)
         {
             _mediator = mediator;
-            _mapper = mapper;
         }
         public async override Task<CreateOrderResponse> CreateOrder(CreateOrderRequest request, ServerCallContext context)
         {
@@ -42,7 +37,7 @@ namespace Mine.Commerce.Infrastructure.Services.gRpc.ProductsService
                 {
                     ListBrand = 
                     {
-                        _mapper.Map<IEnumerable<BrandResponse>>(result)
+                        result.Adapt<IEnumerable<BrandResponse>>()
                     }
                 }
             };
@@ -59,7 +54,7 @@ namespace Mine.Commerce.Infrastructure.Services.gRpc.ProductsService
                 {
                     ListCategory  = 
                     {
-                        _mapper.Map<IEnumerable<CategoryResponse>>(result)
+                        result.Adapt<IEnumerable<CategoryResponse>>()
                     }
                 }
             };
@@ -81,7 +76,7 @@ namespace Mine.Commerce.Infrastructure.Services.gRpc.ProductsService
                 Message = string.Empty,
                 ResponseData = new GetProductResponse.Types.ResponseData
                 {
-                    Product = _mapper.Map<ProductResponse>(result)
+                    Product = result.Adapt<ProductResponse>()
                 }
             };
 

@@ -1,14 +1,6 @@
-using System;
-using System.Collections.Generic;
-using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using Mine.Commerce.Application.Features.Brands;
-using Mine.Commerce.Domain;
-using Mine.Commerce.Domain.Core.Handler;
-using Mine.Commerce.Domain.Core;
-using Mine.Commerce.Infrastructure.ImplementationRepository;
-using System.Reflection;
 using System.Linq;
+using System.Reflection;
 
 namespace Mine.Commerce.Api.ServiceExtension
 {
