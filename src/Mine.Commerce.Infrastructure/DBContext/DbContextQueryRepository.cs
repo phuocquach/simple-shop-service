@@ -14,7 +14,7 @@ namespace Mine.Commerce.Infrastructure.DBContext
     {
         private readonly DbContext _dbContext;
         private readonly DbSet<T> _dbSet;
-        public DbContextQueryRepository(DbContext context)
+        protected DbContextQueryRepository(DbContext context)
         {
             _dbContext = context;
             _dbSet = context.Set<T>();
@@ -27,7 +27,8 @@ namespace Mine.Commerce.Infrastructure.DBContext
 
         public virtual async Task<(IEnumerable<T>, int)> GetAll(CancellationToken cancellation = default)
         {
-            return (await _dbSet.AsQueryable().Where(x => !x.IsDeleted).ToListAsync(), await _dbSet.AsQueryable().Where(x => !x.IsDeleted).CountAsync(cancellation));
+            return (await _dbSet.AsQueryable().Where(x => !x.IsDeleted).ToListAsync(),
+                await _dbSet.AsQueryable().Where(x => !x.IsDeleted).CountAsync(cancellation));
         }
         public virtual async Task<IEnumerable<T>> FindByAsync(Func<T, bool> selector , CancellationToken cancellationToken = default)
         {

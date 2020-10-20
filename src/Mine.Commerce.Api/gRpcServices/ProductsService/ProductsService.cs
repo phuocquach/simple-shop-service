@@ -33,7 +33,7 @@ namespace Mine.Commerce.Infrastructure.Services.gRpc.ProductsService
  
         public async override Task<GetAllBrandsResponse> GetAllBrands(Google.Protobuf.WellKnownTypes.Empty request, ServerCallContext context)
         {
-            var result = _mediator.Send(new Application.Brands.GetAllRequest());
+            var result = await _mediator.Send(new Application.Brands.GetAllRequest());
             var response = new GetAllBrandsResponse
             {
                 StatusCode = 0,
@@ -50,7 +50,7 @@ namespace Mine.Commerce.Infrastructure.Services.gRpc.ProductsService
         }
         public async override Task<GetAllCategoriesResponse> GetAllCategories(Google.Protobuf.WellKnownTypes.Empty request, ServerCallContext context)
         {
-            var result = _mediator.Send(new Application.Categories.GetListRequest());
+            var result = await _mediator.Send(new Application.Categories.GetListRequest());
             var response = new GetAllCategoriesResponse
             {
                 StatusCode = 0,

@@ -11,13 +11,16 @@ namespace Mine.Commerce.Infrastructure.DBContext
         where T: Entity
     {
         protected readonly DbSet<T> _dbSet;
-        protected DbContextCommandRepository(DbContext context)
+        protected DbContext _dbContext;
+        protected DbContextCommandRepository(DbContext dbContext)
         {
-            _dbSet = context.Set<T>();
+            _dbContext = dbContext;
+            _dbSet = dbContext.Set<T>();
         }
         public virtual async Task AddAsync(T item, CancellationToken cancellationToken = default)
         {
             await _dbSet.AddAsync(item);
+            await _dbContext.SaveChangesAsync();
         }
         public async virtual Task<bool> DeleteAsync(Guid id, CancellationToken cancellationToken = default)
         {
@@ -28,11 +31,13 @@ namespace Mine.Commerce.Infrastructure.DBContext
                 return false;
             }
              _dbSet.Remove(item);
+            await _dbContext.SaveChangesAsync();
             return true;
         }
         public virtual async Task UpdateAsync(T item, CancellationToken cancellationToken = default)
         {
             _dbSet.Update(item);
+            await _dbContext.SaveChangesAsync();
         }
         
     }

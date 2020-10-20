@@ -15,11 +15,13 @@ namespace Mine.Commerce.Infrastructure.ImplementationRepository
         public BrandCommandRepository(DbContext dbcontext)
         :base(dbcontext)
         {
+            _dbContext = dbcontext;
             _dbset = dbcontext.Set<Brand>();
         }
-        public async override Task UpdateAsync(Brand item, CancellationToken cancellationToken = default(CancellationToken))
+        public async override Task UpdateAsync(Brand item, CancellationToken cancellationToken = default)
         {
             _dbset.Update(item);
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

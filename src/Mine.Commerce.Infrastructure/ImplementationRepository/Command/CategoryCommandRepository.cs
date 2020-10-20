@@ -11,14 +11,16 @@ namespace Mine.Commerce.Infrastructure.ImplementationRepository
                                              ICommandRepository<Category>                                  
     {
         private readonly DbSet<Category> _dbsetCategory;
-        public CategoryCommandRepository(DbContext context) 
-            : base(context)
+        public CategoryCommandRepository(DbContext dbContext) 
+            : base(dbContext)
         {
-            _dbsetCategory = context.Set<Category>();
+            _dbsetCategory = dbContext.Set<Category>();
+            _dbContext = dbContext;
         }
-        public async override Task UpdateAsync(Category item, CancellationToken cancellationToken)
+        public async override Task UpdateAsync(Category item, CancellationToken cancellationToken = default)
         {
             _dbsetCategory.Update(item);
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

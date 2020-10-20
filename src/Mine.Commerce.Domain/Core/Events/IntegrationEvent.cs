@@ -1,6 +1,6 @@
 namespace Mine.Commerce.Domain.Core.Events
 {
-    public class IntegrationEvent
+    public abstract class IntegrationEvent
     {
         
     }
