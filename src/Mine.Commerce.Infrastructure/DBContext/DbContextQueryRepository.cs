@@ -14,7 +14,7 @@ namespace Mine.Commerce.Infrastructure.DBContext
     {
         private readonly DbContext _dbContext;
         private readonly DbSet<T> _dbSet;
-        public DbContextQueryRepository(DbContext context)
+        protected DbContextQueryRepository(DbContext context)
         {
             _dbContext = context;
             _dbSet = context.Set<T>();

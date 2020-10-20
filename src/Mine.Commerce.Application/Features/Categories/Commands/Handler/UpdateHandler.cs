@@ -1,38 +1,25 @@
-using System;
-using System.Threading;
-using System.Threading.Tasks;
-using AutoMapper;
+using Mapster;
 using MediatR;
 using Mine.Commerce.Domain;
 using Mine.Commerce.Domain.Core;
-using Mine.Commerce.Domain.Core.Handler;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Mine.Commerce.Application.Categories.Commands.Handler
 {
     public class UpdateHandler : IRequestHandler<UpdateRequest, CategoryDto>
     {
         private readonly ICommandRepository<Category> _categoryRepository;
-        private readonly IQueryRepository<Category> _categoryQueryRepository;
-        private readonly IMapper _mapper;
-        private readonly IUnitOfWork _unitOfWork;
-        public UpdateHandler(ICommandRepository<Category> categoryRepository,
-                            IQueryRepository<Category> categoryQueryRepository,
-                            IMapper mapper,
-                            IUnitOfWork unitOfWork)
+        public UpdateHandler(ICommandRepository<Category> categoryRepository)
         {
             _categoryRepository = categoryRepository;
-            _categoryQueryRepository = categoryQueryRepository;
-            _mapper = mapper;
-            _unitOfWork = unitOfWork;
         }
 
         public async Task<CategoryDto> Handle(UpdateRequest request, CancellationToken cancellationToken)
         {
-            var category = _mapper.Map<Category>(request);
+            var category = request.Adapt<Category>();
             await _categoryRepository.UpdateAsync(category, cancellationToken);
-            
-            await _unitOfWork.Commit();
-            return _mapper.Map<CategoryDto>(category);
+            return category.Adapt<CategoryDto>();
         }
     }
 }

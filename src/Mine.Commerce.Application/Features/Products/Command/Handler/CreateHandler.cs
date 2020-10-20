@@ -24,7 +24,7 @@ namespace Mine.Commerce.Application.Products.Command
             _mapper = mapper;
             _storageService = storageService;
         }
-        public async Task<ProductDto> Handle(CreateRequest request, CancellationToken cancellationtoken)
+        public async Task<ProductDto> Handle(CreateRequest request, CancellationToken cancellationToken)
         {
             //TODO: refactor to let upload service decide where to store image
             var imageUrl = $"ProductImage/{request.ProductCode}/{Guid.NewGuid()}";

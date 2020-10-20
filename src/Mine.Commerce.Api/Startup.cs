@@ -1,3 +1,4 @@
+using IdentityServer4.AccessTokenValidation;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -5,16 +6,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Mine.Commerce.Infrastructure.DBContext;
-using AutoMapper;
-using Mine.Commerce.Application.Products;
-using Mine.Commerce.Domain.Core;
 using Mine.Commerce.Api.ServiceExtension;
-using IdentityServer4.AccessTokenValidation;
+using Mine.Commerce.Application.Products;
+using Mine.Commerce.Domain;
 using Mine.Commerce.Domain.Core.Services.StorageService;
-using Mine.Commerce.Infrastructure.Services.Storage;
+using Mine.Commerce.Infrastructure.DBContext;
 using Mine.Commerce.Infrastructure.Services.gRpc.ProductsService;
-using Npgsql;
+using Mine.Commerce.Infrastructure.Services.Storage;
 
 namespace Mine.Commerce.Api
 {
@@ -63,10 +61,8 @@ namespace Mine.Commerce.Api
             });
 
             services.AddScoped<DbContext, MineCommerceContext>();
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddAutoMapper(typeof(Startup).Assembly, typeof(ProductProfile).Assembly);
-            services.AddMediatR(typeof(Startup), typeof(ProductProfile), typeof(MineCommerceContext), typeof(UnitOfWork));
-            services.RegisterRepository(typeof(Startup).Assembly, typeof(ProductProfile).Assembly, typeof(MineCommerceContext).Assembly, typeof(UnitOfWork).Assembly);
+            services.AddMediatR(typeof(Startup), typeof(ProductProfile), typeof(MineCommerceContext), typeof(Entity));
+            services.RegisterRepository(typeof(Startup).Assembly, typeof(ProductProfile).Assembly, typeof(MineCommerceContext).Assembly, typeof(Entity).Assembly);
             services.AddScoped<IStorageService, AzureblobStorage>();
             services.AddGrpc();
         }
@@ -78,12 +74,11 @@ namespace Mine.Commerce.Api
             {
                 app.UseDeveloperExceptionPage();
                 app.UseCertificateForwarding();
-            }
-
-            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
-            {
-                var applicationDbContext = serviceScope.ServiceProvider.GetRequiredService<MineCommerceContext>();
-                //applicationDbContext.Database.Migrate();
+                using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+                {
+                    var applicationDbContext = serviceScope.ServiceProvider.GetRequiredService<MineCommerceContext>();
+                    applicationDbContext.Database.Migrate();
+                }
             }
 
             app.UseStaticFiles();
