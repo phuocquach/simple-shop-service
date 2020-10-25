@@ -5,7 +5,8 @@ COPY . .
 WORKDIR /src/src
 RUN dotnet restore "./Mine.Commerce.Service.sln"
 
-COPY ./.github/tests/start-test.sh /app/start-test.sh
+WORKDIR /src
+COPY /.github/tests/start-test.sh /app/start-test.sh
 
 WORKDIR /app
 ENTRYPOINT ["start-test.sh"]
