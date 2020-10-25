@@ -17,4 +17,4 @@ jobs:
           dotnet build
     - name: test
       run: |
-          docker-compose -f ./.github/tests/docker-compose-test.yml up --build
+          docker-compose -f ./.github/tests/docker-compose-test.yml up --build -d
