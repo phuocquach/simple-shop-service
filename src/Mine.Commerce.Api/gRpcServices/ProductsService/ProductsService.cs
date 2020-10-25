@@ -19,11 +19,15 @@ namespace Mine.Commerce.Infrastructure.Services.gRpc.ProductsService
         }
         public async override Task<CreateOrderResponse> CreateOrder(CreateOrderRequest request, ServerCallContext context)
         {
-            return new CreateOrderResponse();
+            var result = await _mediator.Send(request.Adapt<CreateRequest>());
+            return result.Adapt<CreateOrderResponse>();
+
         }
         public async override Task<GetOrderResponse> GetOrder(GetOrderRequest request, ServerCallContext context) 
         {
             return new GetOrderResponse();
+            //var result = await _mediator.Send(request.Adapt<CreateRequest>());
+            //return result.Adapt<CreateOrderResponse>();
         }
  
         public async override Task<GetAllBrandsResponse> GetAllBrands(Google.Protobuf.WellKnownTypes.Empty request, ServerCallContext context)

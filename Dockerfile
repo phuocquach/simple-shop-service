@@ -5,7 +5,7 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /src
 COPY . .
 WORKDIR /src/src
-RUN dotnet restore "./Mine.Commere.Service.sln"
+RUN dotnet restore "./Mine.Commerce.Service.sln"
 
 #COPY . .
 #WORKDIR "/src/."
