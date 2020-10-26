@@ -1,5 +1,8 @@
 # MS-Service (Mine.Shop.Service)
-![BuildImage](https://github.com/phuocquach/mine-shop-service/workflows/.github/workflows/build_image.yml/badge.svg)
+A small service for a small shop, using Asp.Net Core 3.x, which focusing on learning and practicing C#, .Net and the ecosystem on .Net.
+
+## Status Check
+![Build And Test](https://github.com/phuocquach/mine-shop-service/workflows/.github/workflows/build_image.yml/badge.svg)
 
 ## The technical stack:
 
@@ -16,13 +19,13 @@
 * [Docker compose](https://docs.docker.com/compose/)
 * CI & CD with [Github action](https://github.com/features/actions)
 
-## Run database container
+## Set up 
+### Run database container
 docker-compose -f ./docker-compose-soft.yml up
 
-## Database update
+### Database update
 dotnet ef migrations add InitilaPgDB --project src/Mine.Commerce.Api #add migration
-
 dotnet ef database update --project src/Mine.Commerce.Api
 
-## Dotnet test
+### Dotnet test
 dotnet test /p:CollectCoverage=true
