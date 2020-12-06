@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS mine-service-test
+FROM mcr.microsoft.com/dotnet/core/sdk:5.0 AS mine-service-test
 
 WORKDIR /src
 COPY . .
