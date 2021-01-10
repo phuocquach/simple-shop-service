@@ -4,17 +4,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
+    - uses: actions/setup-dotnet@v1
     - uses: azure/docker-login@v1
       with:
         login-server: mmondocker.azurecr.io
         username: ${{ secrets.acr_mmondocker_username }}
         password: ${{ secrets.acr_mmondocker_password }}
-    
+
     - name: Build
       run: |
           cd "./src"
           dotnet restore
           dotnet build
-    - name: Publish
+    - name: test
       run: |
-          dotnet publish ./src/Mine.Commerce.Api
+          docker-compose -f ./.github/tests/docker-compose-test.yml up --build -d

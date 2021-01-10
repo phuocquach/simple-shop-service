@@ -9,4 +9,12 @@ namespace Mine.Commerce.Domain.Common
         Delivering = 4,
         Completed = 5,
     }
+
+    public enum CartStatus : int 
+    {
+        Empty = 0,
+        Buying = 1,
+        CheckingOut = 2,
+        CheckedOut = 3
+    }
 }

@@ -1,9 +1,14 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS mine-service-test
 
+WORKDIR /src
 COPY . .
-RUN dotnet restore "./src/Mine.Commere.Service.sln"
+WORKDIR /src/src
+RUN dotnet restore "./Mine.Commerce.Service.sln"
 
-COPY ./.github/tests/start-test.sh /app/start-test.sh
-
+FROM mine-service-test
 WORKDIR /app
-ENTRYPOINT ["start-test.sh"]
+COPY /.github/tests/start-test.sh start-test.sh
+
+RUN chmod +x "start-test.sh"
+
+ENTRYPOINT ["/app/start-test.sh"]

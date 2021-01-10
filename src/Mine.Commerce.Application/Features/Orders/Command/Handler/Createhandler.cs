@@ -11,6 +11,7 @@ namespace Mine.Commerce.Application.Orders
         public Createhandler()
          : base()
         {
+            
         }
 
         public Task<Guid> Handle(CreateRequest request, CancellationToken cancellationToken)

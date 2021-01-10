@@ -36,7 +36,6 @@ namespace Mine.Commerce.Api.Controllers
         public async Task<IActionResult> PutProduct(Guid id, UpdateRequest request, CancellationToken cancellationToken)
         {
             request.Id = id;
-
             return Ok(await Mediator.Send(request, cancellationToken));
         }
 
