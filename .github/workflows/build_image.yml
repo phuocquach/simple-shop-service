@@ -5,8 +5,6 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - uses: actions/setup-dotnet@v1
-      with:
-          dotnet-version: '5.0.100'
     - uses: azure/docker-login@v1
       with:
         login-server: mmondocker.azurecr.io
