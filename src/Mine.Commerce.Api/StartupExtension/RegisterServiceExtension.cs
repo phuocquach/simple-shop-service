@@ -1,4 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
+using Mine.Commerce.Domain.Features.Carts;
+using Mine.Commerce.Infrastructure.ImplementationServices;
 using System.Linq;
 using System.Reflection;
 
@@ -33,6 +35,7 @@ namespace Mine.Commerce.Api.ServiceExtension
             {
                 assemblies = new[] {Assembly.GetCallingAssembly()};
             }
+            services.AddScoped<ICartServices, CartServices>();
             //TODO: register domain service by querie all and register
         }
     }
