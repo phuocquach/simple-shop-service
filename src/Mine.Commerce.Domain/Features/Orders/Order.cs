@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using Mine.Commerce.Domain.Common;
+using Mine.Commerce.Domain.Core;
 
 namespace Mine.Commerce.Domain
 {
-    public class Order: Entity
+    public class Order: Entity, IAggregateRoot
     {
         public string Code { get; set; }
         public Guid CustomerId {get; set; }

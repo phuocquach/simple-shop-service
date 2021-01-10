@@ -21,5 +21,19 @@ namespace Mine.Commerce.Api.ServiceExtension
                 services.Add(new ServiceDescriptor(implementedInteface, item, ServiceLifetime.Scoped ));
             }
         }
+
+        public static void RegisterDomainServices(this IServiceCollection services, params Assembly[] assemblies)
+        {
+            if (assemblies.Length == 0)
+            {
+                assemblies = new[] {Assembly.GetCallingAssembly()};
+            }
+
+            if (assemblies.Length == 0)
+            {
+                assemblies = new[] {Assembly.GetCallingAssembly()};
+            }
+            //TODO: register domain service by querie all and register
+        }
     }
 }

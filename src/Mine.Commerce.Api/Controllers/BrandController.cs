@@ -12,13 +12,13 @@ namespace Mine.Commerce.Api.Controllers
     public class BrandsController : ApiController
     {
         [Authorize]
-        [HttpPost("")]
+        [HttpPost()]
         public async Task<ActionResult<Guid>> PostBrand(CreateRequest request, CancellationToken cancellationtoken)
         {
             return Ok(await Mediator.Send(request, cancellationtoken));
         }
 
-        [HttpGet("")]
+        [HttpGet()]
         public async Task<ActionResult<Guid>> GetAllBrand([FromRoute]GetAllRequest request, CancellationToken cancellationtoken)
         {
             return Ok(await Mediator.Send(request, cancellationtoken));
