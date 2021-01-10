@@ -15,6 +15,16 @@ services:
     networks:
       - postgres
     restart: unless-stopped
+
+  mssql_server:
+    container_name: mssql_server
+    image: mcr.microsoft.com/mssql/server
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: P@ssw0rd
+      ACCEPT_EULA: Y
+    restart: unless-stopped
   
   pgadmin:
     container_name: pgadmin_container

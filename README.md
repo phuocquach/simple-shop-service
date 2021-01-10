@@ -27,5 +27,11 @@ docker-compose -f ./docker-compose-soft.yml up
 dotnet ef migrations add InitilaPgDB --project src/Mine.Commerce.Api #add migration
 dotnet ef database update --project src/Mine.Commerce.Api
 
-### Dotnet test
+# Dotnet test
 dotnet test /p:CollectCoverage=true
+
+
+# Url to access
+Swagger API: http://localhost:3037/swagger/index.html
+Grpc: http://localhost:3031', http://localhost:5051
+API: http://localhost:3037/

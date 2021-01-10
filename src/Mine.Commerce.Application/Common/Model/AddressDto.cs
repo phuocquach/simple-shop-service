@@ -1,6 +1,6 @@
 ﻿namespace Mine.Commerce.Application.Common
 {
-    public class AddressDto
+    public record AddressDto
     {
         public string City { get; set; }
         public string District { get; set; }
