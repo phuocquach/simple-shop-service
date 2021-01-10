@@ -6,7 +6,7 @@ A small service for a small shop, using Asp.Net Core 3.x, which focusing on lear
 
 ## The technical stack:
 
-* .NET Core 3.x
+* .NET 5.x
 * Expose Rest and [grpc] (https://github.com/grpc/grpc-dotnet) API
 * Using [RabbitMQ](https://www.rabbitmq.com/) as a message broker based on [Masstransit](http://masstransit-project.com/) (TODO)
 * SQL database with [Postgresql](https://www.postgresql.org/)
