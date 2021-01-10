@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Mapster;
 
-namespace Mine.Commerce.Application.Features.Carts.Command
+namespace Mine.Commerce.Application.Features.Carts
 {
     public class AddCartItemHandler : IRequestHandler<AddCartItemRequest, Unit>
     {

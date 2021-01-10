@@ -1,7 +1,7 @@
 using System;
 using MediatR;
 
-namespace Mine.Commerce.Application.Features.Carts.Command
+namespace Mine.Commerce.Application.Features.Carts
 {
     public class AddCartItemRequest : IRequest<Unit>
     {
