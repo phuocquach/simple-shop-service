@@ -3,7 +3,7 @@ using System;
 
 namespace Mine.Commerce.Application.Features.Orders
 {
-    public record OrderResponseDto
+    public record OrderResponse
     {
         public Guid Id { get; set; }
         public string Number { get; set; } 

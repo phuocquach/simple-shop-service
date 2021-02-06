@@ -6,22 +6,22 @@ namespace Mine.Commerce.Infrastructure.ImplementationServices
 {
     public class CartServices : ICartServices
     {
-        public Task<bool> AddCartItem(CartItem cartItem)
+        public Task AddCartItem(CartItem cartItem)
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> CheckOut(Cart cart)
+        public Task CheckOut(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> GetCart(Guid customerId)
+        public Task<CartDto> GetCart(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> RemoveCartItem(Guid cartItemId)
+        public Task RemoveCartItem(Guid cartItemId)
         {
             throw new NotImplementedException();
         }

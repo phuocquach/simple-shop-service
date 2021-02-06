@@ -5,9 +5,9 @@ namespace Mine.Commerce.Domain.Features.Carts
 {
     public interface ICartServices
     {
-        Task<bool> GetCart(Guid customerId);
-        Task<bool> AddCartItem(CartItem cartItem);
-        Task<bool> RemoveCartItem(Guid cartItemId);
-        Task<bool> CheckOut(Cart cart);
+        Task<CartDto> GetCart(Guid id);
+        Task AddCartItem(CartItem cartItem);
+        Task RemoveCartItem(Guid cartItemId);
+        Task CheckOut(Guid id);
     }
 }
