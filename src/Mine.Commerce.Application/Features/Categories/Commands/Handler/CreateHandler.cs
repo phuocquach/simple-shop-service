@@ -1,14 +1,14 @@
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 using Mapster;
 using MediatR;
 using Mine.Commerce.Domain;
 using Mine.Commerce.Domain.Core;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Mine.Commerce.Application.Categories.Commands.Handler
 {
-    public class CreateHandler : IRequestHandler<CreateRequest,Guid>
+    public class CreateHandler : IRequestHandler<CreateRequest, Guid>
     {
         private readonly ICommandRepository<Category> _categoryRepository;
         public CreateHandler(ICommandRepository<Category> categoryRepository)
@@ -20,7 +20,7 @@ namespace Mine.Commerce.Application.Categories.Commands.Handler
             var category = request.Adapt<Category>();
             await _categoryRepository.AddAsync(category);
 
-            return category.Id;
+            return category.Guid;
         }
     }
 }

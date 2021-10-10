@@ -1,10 +1,10 @@
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 using Mapster;
 using MediatR;
 using Mine.Commerce.Domain;
 using Mine.Commerce.Domain.Core;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Mine.Commerce.Application.Brands
 {
@@ -14,14 +14,14 @@ namespace Mine.Commerce.Application.Brands
         public CreateHandler(ICommandRepository<Brand> brandRepository)
         {
             _brandRepository = brandRepository;
-        }        
+        }
         public async Task<Guid> Handle(CreateRequest request, CancellationToken cancellationToken)
         {
             var brand = request.Adapt<Brand>();
-            
+
             await _brandRepository.AddAsync(brand);
-            
-            return brand.Id;
+
+            return brand.Guid;
         }
     }
 }

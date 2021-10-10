@@ -6,7 +6,8 @@ namespace Mine.Commerce.Domain
     public abstract class Entity
     {
         [Key]
-        public Guid Id { get; set; }
+        public Guid Guid { get; set; }
+        public int Id { get; set; }
         public DateTime CreatedDateUtc { get; set; }
         public DateTime UpdatedDateUtc { get; set; }
         public string CreatedBy { get; set; }

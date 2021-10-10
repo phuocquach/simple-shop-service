@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Mine.Commerce.Domain
+﻿namespace Mine.Commerce.Domain
 {
     public class Brand : Entity
     {
@@ -9,7 +7,7 @@ namespace Mine.Commerce.Domain
 
         public Brand()
         {
-            Id = Guid.NewGuid();
+
         }
     }
 }

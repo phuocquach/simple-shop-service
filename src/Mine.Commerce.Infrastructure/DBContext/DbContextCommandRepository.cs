@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Mine.Commerce.Infrastructure.DBContext
 {
     public abstract class DbContextCommandRepository<T> : ICommandRepository<T>
-        where T: Entity
+        where T : Entity
     {
         protected readonly DbSet<T> _dbSet;
         protected DbContext _dbContext;
@@ -24,13 +24,13 @@ namespace Mine.Commerce.Infrastructure.DBContext
         }
         public async virtual Task<bool> DeleteAsync(Guid id, CancellationToken cancellationToken = default)
         {
-            var item = await _dbSet.FirstAsync(x => x.Id == id);
+            var item = await _dbSet.FirstAsync(x => x.Guid == id);
 
-            if(item is null)
+            if (item is null)
             {
                 return false;
             }
-             _dbSet.Remove(item);
+            _dbSet.Remove(item);
             await _dbContext.SaveChangesAsync();
             return true;
         }
@@ -39,6 +39,6 @@ namespace Mine.Commerce.Infrastructure.DBContext
             _dbSet.Update(item);
             await _dbContext.SaveChangesAsync();
         }
-        
+
     }
 }
