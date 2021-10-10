@@ -31,9 +31,9 @@ namespace Mine.Commerce.Api
             services.AddControllers();
             services.AddDbContext<MineCommerceContext>(options =>
             {
-               options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"),
-                    builder => { builder.MigrationsAssembly("Mine.Commerce.Api"); }
-               );
+                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"),
+                     builder => { builder.MigrationsAssembly("Mine.Commerce.Api"); }
+                );
             });
             services.AddSwaggerService(Configuration);
             services.AddCors(o => o.AddPolicy("AllowAllPolicy", builder =>
@@ -47,7 +47,7 @@ namespace Mine.Commerce.Api
             .AddIdentityServerAuthentication(options =>
             {
                 // base-address of your identityserver
-                options.Authority = Configuration.GetValue<string>("Identity:Url"); 
+                options.Authority = Configuration.GetValue<string>("Identity:Url");
                 // name of the API resource
                 options.ApiName = "MineCommerceAPI";
                 options.RequireHttpsMetadata = false;
@@ -86,7 +86,7 @@ namespace Mine.Commerce.Api
                 c.OAuthClientSecret("secret");
                 c.OAuthUsePkce();
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Mine.Commerce API V1");
-                
+
             });
 
             app.UseRouting();

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text.Json.Serialization;
 
 namespace Mine.Commerce.Domain
@@ -13,7 +12,7 @@ namespace Mine.Commerce.Domain
         public ICollection<ProductCategory> ProductCategories { get; set; }
         public Category()
         {
-            Id = Guid.NewGuid();
+            Guid = Guid.NewGuid();
         }
     }
 }

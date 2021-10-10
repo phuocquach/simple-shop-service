@@ -1,16 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using Mine.Commerce.Domain;
+using Mine.Commerce.Domain.Core;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Mine.Commerce.Domain.Core;
-using Mine.Commerce.Domain;
-using System.Linq;
 
 namespace Mine.Commerce.Infrastructure.DBContext
 {
     public abstract class DbContextQueryRepository<T> : IQueryRepository<T>
-        where T: Entity
+        where T : Entity
     {
         private readonly DbContext _dbContext;
         private readonly DbSet<T> _dbSet;
@@ -20,9 +20,9 @@ namespace Mine.Commerce.Infrastructure.DBContext
             _dbSet = context.Set<T>();
         }
 
-        public virtual async Task<T> Get(Guid id, CancellationToken cancellation = default)
+        public virtual async Task<T> Get(Guid guid, CancellationToken cancellation = default)
         {
-            return await _dbSet.AsQueryable().SingleAsync(x => x.Id == id);
+            return await _dbSet.AsQueryable().SingleAsync(x => x.Guid == guid);
         }
 
         public virtual async Task<(IEnumerable<T>, int)> GetAll(CancellationToken cancellation = default)
@@ -30,7 +30,7 @@ namespace Mine.Commerce.Infrastructure.DBContext
             return (await _dbSet.AsQueryable().Where(x => !x.IsDeleted).ToListAsync(),
                 await _dbSet.AsQueryable().Where(x => !x.IsDeleted).CountAsync(cancellation));
         }
-        public virtual async Task<IEnumerable<T>> FindByAsync(Func<T, bool> selector , CancellationToken cancellationToken = default)
+        public virtual async Task<IEnumerable<T>> FindByAsync(Func<T, bool> selector, CancellationToken cancellationToken = default)
         {
             return _dbSet.AsQueryable().Where(x => !x.IsDeleted).Where(selector);
         }

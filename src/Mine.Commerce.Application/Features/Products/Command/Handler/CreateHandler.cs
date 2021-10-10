@@ -26,13 +26,14 @@ namespace Mine.Commerce.Application.Products.Command
             var imageUrl = $"ProductImage/{request.ProductCode}/{Guid.NewGuid()}";
             await _storageService.UploadFile(request.ProductImage.OpenReadStream(), imageUrl);
             var product = request.Adapt<Product>();
-            product.Id = Guid.NewGuid();
+            product.Guid = Guid.NewGuid();
+
             product.ProductCategories = new List<ProductCategory>
             {
                 new ProductCategory
                 {
                     CategoryId = request.Category,
-                    ProductId = product.Id
+                    ProductId = product.Guid
                 }
             };
             product.ProductImages = new List<ProductImage>
@@ -40,7 +41,7 @@ namespace Mine.Commerce.Application.Products.Command
                 new ProductImage
                 {
                     IsPrimary = true,
-                    ProductId = product.Id,
+                    ProductId = product.Guid,
                     Id = Guid.NewGuid(),
                     StorageUrl = imageUrl
                 }
