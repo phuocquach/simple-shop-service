@@ -1,0 +1,17 @@
+version = 1
+
+[[analyzers]]
+name = docker
+enabled = true
+
+  [analyzers.meta]
+  dockerfile_paths = [
+    Dockerfile,
+    Dockerfile.test
+  ]
+
+  trusted_registries = [
+    my-registry.com,
+    docker.io
+  ]
+  
