@@ -9,10 +9,8 @@ using Microsoft.Extensions.Hosting;
 using Mine.Commerce.Api.ServiceExtension;
 using Mine.Commerce.Application.Products;
 using Mine.Commerce.Domain;
-using Mine.Commerce.Domain.Core.Services.StorageService;
 using Mine.Commerce.Infrastructure.DBContext;
 using Mine.Commerce.Infrastructure.Services.gRpc.ProductsService;
-using Mine.Commerce.Infrastructure.Services.Storage;
 
 namespace Mine.Commerce.Api
 {
@@ -54,11 +52,10 @@ namespace Mine.Commerce.Api
                 options.ApiSecret = "secret";
             });
 
-            services.AddScoped<DbContext, MineCommerceContext>();
             services.AddMediatR(typeof(Startup), typeof(GetAllRequest), typeof(MineCommerceContext), typeof(Entity));
-            services.RegisterRepository(typeof(Startup).Assembly, typeof(GetAllRequest).Assembly, typeof(MineCommerceContext).Assembly, typeof(Entity).Assembly);
-            services.RegisterDomainServices(typeof(Startup).Assembly, typeof(GetAllRequest).Assembly, typeof(MineCommerceContext).Assembly, typeof(Entity).Assembly);
-            services.AddScoped<IStorageService, AzureblobStorage>();
+            services.RegisterServicesAsScoped(typeof(Startup).Assembly, typeof(GetAllRequest).Assembly, typeof(MineCommerceContext).Assembly, typeof(Entity).Assembly);
+            services.AddScoped<DbContext, MineCommerceContext>();
+
             services.AddGrpc();
 
         }
