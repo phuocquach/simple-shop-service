@@ -6,12 +6,5 @@ enabled = true
 
   [analyzers.meta]
   dockerfile_paths = [
-    Dockerfile,
-    Dockerfile.test
+    Dockerfile
   ]
-
-  trusted_registries = [
-    my-registry.com,
-    docker.io
-  ]
-  
