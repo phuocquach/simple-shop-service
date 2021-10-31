@@ -7,6 +7,6 @@ namespace Mine.Commerce.Application.Features.Carts
     public class GetCartResponse
     {
         public IEnumerable<CartItem> CartItems { get; set;}
-        public CartStatus CartStatus { get; set; }
+        public int CartStatus { get; set; }
     }
 }

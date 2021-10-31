@@ -1,4 +1,4 @@
-namespace Mine.Commerce.Domain.Common
+namespace Mine.Commerce.Domain
 {
     public interface IAnchor
     {
